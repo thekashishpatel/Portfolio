@@ -1,0 +1,1103 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Breathe Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EEF0F3;
+    --paper-line:#D3D8DE;
+    --ink:#15171C;
+    --ink-soft:#4B4F58;
+    --signal:#E8452C;
+    --signal-dim:#c73a23;
+    --cobalt:#1E3A5F;
+    --card:#FFFFFF;
+    --radius:0px;
+    --max:820px;
+    --font-display:'Bricolage Grotesque', 'Arial Black', sans-serif;
+    --font-body:'Inter', -apple-system, sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+
+  a{color:inherit;}
+
+  :focus-visible{
+    outline:3px solid var(--cobalt);
+    outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  /* ---------- NAV ---------- */
+  .nav{
+    max-width:1100px;
+    margin:0 auto;
+    padding:28px 32px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+  }
+  .nav .mark{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:1rem;
+    letter-spacing:0.01em;
+  }
+  .nav .tagline{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+  }
+  .nav-left{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  .nav-links{
+    display:flex;
+    align-items:baseline;
+    gap:22px;
+  }
+  .nav-links a{
+    font-size:0.9rem;
+    font-weight:600;
+    text-decoration:none;
+    color:var(--ink);
+    border-bottom:2px solid transparent;
+    padding-bottom:2px;
+    transition:border-color 0.15s ease, color 0.15s ease;
+  }
+  .nav-links a:hover{
+    border-color:var(--signal);
+    color:var(--signal-dim);
+  }
+  .nav-links a.is-cta{
+    color:var(--signal-dim);
+  }
+
+  .nav-toggle{
+    display:none;
+    position:relative;
+    align-items:center;
+    justify-content:center;
+    width:38px;
+    height:38px;
+    flex:none;
+    border:1px solid var(--paper-line);
+    background:var(--card);
+    padding:0;
+    cursor:pointer;
+  }
+  .nav-toggle-bar{
+    position:absolute;
+    left:10px;
+    right:10px;
+    height:2px;
+    background:var(--ink);
+    transition:transform 0.25s ease, opacity 0.2s ease, top 0.25s ease;
+  }
+  .nav-toggle-bar:nth-child(1){top:13px;}
+  .nav-toggle-bar:nth-child(2){top:18px;}
+  .nav-toggle-bar:nth-child(3){top:23px;}
+  .nav.is-open .nav-toggle-bar:nth-child(1){top:18px; transform:rotate(45deg);}
+  .nav.is-open .nav-toggle-bar:nth-child(2){opacity:0;}
+  .nav.is-open .nav-toggle-bar:nth-child(3){top:18px; transform:rotate(-45deg);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    max-width:1100px;
+    margin:0 auto;
+    padding:9vh 32px 10vh;
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    align-items:center;
+    gap:48px;
+  }
+  .hero-copy{min-width:0;}
+  .hero-photo{
+    position:relative;
+    aspect-ratio:4/5;
+    max-width:360px;
+    justify-self:end;
+    border:1px solid var(--paper-line);
+    background:var(--card);
+    padding:10px;
+  }
+  .hero-photo img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:top center;
+  }
+  @media (max-width:760px){
+    .hero{grid-template-columns:1fr; gap:32px;}
+    .hero-photo{justify-self:start; max-width:280px;}
+  }
+  .hero h1{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(3.2rem, 10vw, 7.5rem);
+    line-height:0.94;
+    margin:0 0 1.6rem;
+    letter-spacing:-0.02em;
+  }
+  .hero h1 span{
+    display:block;
+    opacity:0;
+    transform:translateY(0.4em);
+    animation:rise 0.7s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  .hero h1 span:nth-child(2){animation-delay:0.12s;}
+  @keyframes rise{
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  .hero p{
+    max-width:34ch;
+    font-size:1.15rem;
+    color:var(--ink-soft);
+    margin:0 0 2.4rem;
+  }
+
+  .hero-scroll{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:0.95rem;
+    text-decoration:none;
+    color:var(--ink);
+    border-bottom:2px solid var(--signal);
+    padding-bottom:4px;
+  }
+  .hero-scroll svg{
+    width:16px; height:16px;
+    transition:transform 0.2s ease;
+  }
+  .hero-scroll:hover svg{transform:translateY(3px);}
+
+  /* ---------- POSITIONING TAG ---------- */
+  .role-tag{
+    display:inline-block;
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:0.8rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--signal-dim);
+    margin-bottom:18px;
+  }
+
+  /* ---------- IMPACT STATS ---------- */
+  .stats{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 32px 8vh;
+  }
+  .stats-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--paper-line);
+    border:1px solid var(--paper-line);
+  }
+  .stat-item{
+    background:var(--card);
+    padding:26px 24px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .stat-num{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(1.6rem, 3vw, 2.1rem);
+    color:var(--signal-dim);
+    letter-spacing:-0.01em;
+  }
+  .stat-label{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+  }
+  @media (max-width:760px){
+    .stats-list{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){
+    .stats{padding:0 20px 6vh;}
+  }
+
+  /* ---------- FEATURED CASE STUDY ---------- */
+  .featured{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 32px 8vh;
+  }
+  .featured-card{
+    background:var(--card);
+    border:1px solid var(--paper-line);
+    padding:36px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:32px;
+  }
+  .featured-card .tag{
+    display:inline-block;
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:0.74rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--signal-dim);
+    white-space:nowrap;
+    margin-bottom:14px;
+  }
+  .featured-card h2{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:1.6rem;
+    margin:0 0 10px;
+  }
+  .featured-card p{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:0.98rem;
+    max-width:62ch;
+  }
+  .featured-link{
+    flex:none;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.92rem;
+    color:var(--signal-dim);
+    border-bottom:2px solid var(--signal);
+    padding-bottom:2px;
+    white-space:nowrap;
+  }
+  .featured-link svg{width:15px; height:15px;}
+  @media (max-width:760px){
+    .featured-card{flex-direction:column; align-items:flex-start;}
+  }
+  @media (max-width:640px){
+    .featured{padding:0 20px 6vh;}
+    .featured-card{padding:28px 24px;}
+  }
+
+  /* ---------- WORK SECTION ---------- */
+  .work{
+    max-width:1100px;
+    margin:0 auto;
+    padding:4vh 32px 14vh;
+  }
+  .work-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    border-bottom:1px solid var(--ink);
+    padding-bottom:18px;
+    margin-bottom:8px;
+  }
+  .work-head h2{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:clamp(1.8rem, 4vw, 2.6rem);
+    margin:0;
+  }
+  .work-head p{
+    margin:0 0 4px;
+    color:var(--ink-soft);
+    font-size:0.95rem;
+    max-width:28ch;
+    text-align:right;
+  }
+
+  .work-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+  }
+
+  .work-list + .work-list{
+    margin-top:20px;
+    grid-template-columns:repeat(4, 1fr);
+  }
+
+  .work-item{
+    background:var(--card);
+    border:1px solid var(--paper-line);
+    padding:26px 24px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .work-item-top{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+
+  .work-item-title{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+
+  .tag{
+    display:inline-block;
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+
+  .work-item h3{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:1.25rem;
+    line-height:1.2;
+    margin:0;
+  }
+
+  .work-link{
+    flex:none;
+    margin-top:auto;
+    align-self:flex-start;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.92rem;
+    color:var(--signal-dim);
+    padding-top:6px;
+    border-bottom:2px solid transparent;
+    transition:border-color 0.15s ease, transform 0.15s ease;
+  }
+  .work-link svg{
+    width:15px; height:15px;
+    transition:transform 0.15s ease;
+  }
+  .work-link:hover{
+    border-color:var(--signal);
+  }
+  .work-link:hover svg{
+    transform:translate(3px,-3px);
+  }
+
+  .work-item p{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:0.95rem;
+  }
+
+  @media (max-width:900px){
+    .work-list, .work-list + .work-list{grid-template-columns:repeat(2, 1fr);}
+  }
+
+  @media (max-width:640px){
+    .nav{padding:20px 20px 16px; flex-direction:row; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0;}
+    .nav-left{min-width:0;}
+    .nav-toggle{display:inline-flex;}
+    .nav-links{
+      display:flex;
+      width:100%;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:16px;
+      max-height:0;
+      opacity:0;
+      overflow:hidden;
+      margin-top:0;
+      padding-top:18px;
+      border-top:1px solid transparent;
+      transition:max-height 0.3s ease, opacity 0.25s ease, margin-top 0.3s ease, border-color 0.3s ease;
+    }
+    .nav.is-open .nav-links{
+      max-height:420px;
+      opacity:1;
+      margin-top:18px;
+      border-top-color:var(--paper-line);
+    }
+    .hero{padding:8vh 20px 8vh;}
+    .work{padding:2vh 20px 10vh;}
+    .work-head{flex-direction:column; align-items:flex-start;}
+    .work-head p{text-align:left;}
+    .work-list, .work-list + .work-list{grid-template-columns:1fr;}
+    .work-link{padding:0;}
+  }
+
+  /* ---------- CERTIFICATIONS ---------- */
+  .certs{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 32px 14vh;
+  }
+  .certs-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:16px;
+  }
+  .cert-card{
+    background:var(--card);
+    border:1px solid var(--paper-line);
+    padding:22px 24px;
+  }
+  .cert-card h3{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:1.02rem;
+    margin:0 0 4px;
+    line-height:1.25;
+  }
+  .cert-meta{
+    display:block;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+  }
+  @media (max-width:900px){
+    .certs-list{grid-template-columns:repeat(2, 1fr);}
+  }
+  @media (max-width:640px){
+    .certs{padding:0 20px 10vh;}
+    .certs-list{grid-template-columns:1fr;}
+  }
+
+  /* ---------- AWARDS ---------- */
+  .awards{
+    max-width:1100px;
+    margin:0 auto;
+    padding:4vh 32px 14vh;
+  }
+  .awards-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+  .award-card{
+    background:var(--card);
+    border:1px solid var(--paper-line);
+    padding:32px 36px;
+  }
+  .award-head{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:8px 16px;
+    margin-bottom:6px;
+  }
+  .award-head h3{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:1.25rem;
+    margin:0;
+  }
+  .award-meta{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+  }
+  .award-assoc{
+    margin:0 0 14px;
+    font-size:0.82rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+    color:var(--signal-dim);
+    text-transform:uppercase;
+  }
+  .award-desc{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:0.98rem;
+    max-width:70ch;
+  }
+  .award-quotes{
+    list-style:none;
+    margin:16px 0 0;
+    padding:16px 0 0;
+    border-top:1px solid var(--paper-line);
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .award-quotes li{
+    font-size:0.92rem;
+    color:var(--ink);
+    padding-left:16px;
+    border-left:3px solid var(--paper-line);
+  }
+  .award-quotes cite{
+    display:block;
+    margin-top:4px;
+    font-style:normal;
+    font-size:0.8rem;
+    color:var(--ink-soft);
+  }
+  .award-photos{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+    flex-wrap:wrap;
+  }
+  .award-photos img{
+    height:220px;
+    width:auto;
+    max-width:100%;
+    object-fit:cover;
+    border:1px solid var(--paper-line);
+  }
+  .award-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:18px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.9rem;
+    color:var(--signal-dim);
+    border-bottom:2px solid var(--signal);
+    padding-bottom:2px;
+  }
+  .award-link svg{width:15px; height:15px;}
+
+  /* ---------- RECOMMENDATIONS ---------- */
+  .recs{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 32px 14vh;
+  }
+  .recs-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:20px;
+  }
+  .rec-card{
+    background:var(--card);
+    border:1px solid var(--paper-line);
+    padding:28px 30px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .rec-card.is-featured{
+    grid-column:1 / -1;
+  }
+  .rec-person{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .rec-person img{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    object-fit:cover;
+    flex:none;
+  }
+  .rec-person-name{
+    font-weight:700;
+    font-size:0.98rem;
+  }
+  .rec-person-title{
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    max-width:52ch;
+  }
+  .rec-person-date{
+    font-size:0.78rem;
+    color:var(--ink-soft);
+  }
+  .rec-card blockquote{
+    margin:0;
+    font-size:0.95rem;
+    color:var(--ink);
+  }
+  .rec-card blockquote p{
+    margin:0 0 12px;
+  }
+  .rec-card blockquote p:last-child{
+    margin-bottom:0;
+  }
+
+  @media (max-width:760px){
+    .recs-list{grid-template-columns:1fr;}
+    .rec-card.is-featured{grid-column:auto;}
+  }
+
+  @media (max-width:640px){
+    .awards{padding:2vh 20px 10vh;}
+    .award-card{padding:24px 22px;}
+    .recs{padding:0 20px 10vh;}
+  }
+</style>
+
+<script>history.scrollRestoration="manual";window.scrollTo(0,0);addEventListener("pageshow",function(){window.scrollTo(0,0);});</script>
+
+<nav class="nav">
+  <div class="nav-left">
+    <span class="mark">Kashish Patel</span>
+    <span class="tagline">The Marketing Freak™</span>
+  </div>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#recommendations">Recommendations</a>
+    <a href="#awards">Awards</a>
+    <a href="#education">Education</a>
+    <a href="https://drive.google.com/file/d/1ZUnAs2K84tHvm_HBs560I-zbRzhI_A7S/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+    <a href="https://www.linkedin.com/in/kashishpatel0/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="is-cta" href="mailto:kashishpatel2210@gmail.com">Contact me</a>
+  </div>
+</nav>
+
+<script>
+  (function(){
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('.nav');
+    if(!btn || !nav) return;
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+
+<header class="hero">
+  <div class="hero-copy">
+    <span class="role-tag">Open to Senior Marketing Manager roles</span>
+    <h1><span>I breathe</span><span>marketing.</span></h1>
+    <p>Seven years in, and it's still the only job where I've never once been bored.</p>
+    <p>Give me a product, a market, and a revenue target. I'll figure out who to sell it to, how to position it, how to launch it, how to measure it, and how to improve the numbers.</p>
+    <a class="hero-scroll" href="#work">
+      See my work
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </div>
+  <div class="hero-photo">
+    <img src="assets/hero/kash-headshot.jpg" alt="Kashish Patel, headshot">
+  </div>
+</header>
+
+<section class="stats">
+  <ul class="stats-list">
+    <li class="stat-item">
+      <span class="stat-num">7+ yrs</span>
+      <span class="stat-label">Building marketing from the ground up, across pharma, real estate, D2C, and public education</span>
+    </li>
+    <li class="stat-item">
+      <span class="stat-num">$200K+</span>
+      <span class="stat-label">In sales generated through funnels I designed and ran myself</span>
+    </li>
+    <li class="stat-item">
+      <span class="stat-num">125 schools</span>
+      <span class="stat-label">Reached daily by the content system I built from scratch for BPS Eats</span>
+    </li>
+  </ul>
+</section>
+
+<section class="featured">
+  <div class="featured-card">
+    <div>
+      <span class="tag">Flagship</span>
+      <h2>BPS Eats: building a marketing function from zero</h2>
+      <p>Boston Public Schools' Food &amp; Nutrition Services had never had a marketing manager. I built the department's first marketing plan, launched the BPS Eats account, and built the content system now reaching 125 schools.</p>
+    </div>
+    <a class="featured-link" href="bps-eats.html">
+      Read the case study
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="work-head">
+    <h2>The work</h2>
+    <p>Seven ways I've made marketing move. Click through to see it.</p>
+  </div>
+
+  <ul class="work-list">
+
+    <li class="work-item">
+      <div class="work-item-top">
+        <div class="work-item-title">
+          <span class="tag">Content</span>
+          <h3>Content Marketing &amp; Storytelling</h3>
+        </div>
+        <a class="work-link" href="content.html">
+          View the work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+      <p>Concept, scripting, filming, editing, and design, all mine start to finish.</p>
+    </li>
+
+    <li class="work-item">
+      <div class="work-item-top">
+        <div class="work-item-title">
+          <span class="tag">Growth</span>
+          <h3>Performance &amp; Growth Marketing</h3>
+        </div>
+        <a class="work-link" href="growth.html">
+          View the work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+      <p>Campaign builds across Meta, Google, and LinkedIn Ads, built to convert.</p>
+    </li>
+
+    <li class="work-item">
+      <div class="work-item-top">
+        <div class="work-item-title">
+          <span class="tag">Strategy</span>
+          <h3>Marketing Strategy</h3>
+        </div>
+        <a class="work-link" href="strategy.html">
+          View the work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+      <p>7+ years of go-to-market strategy, built to hit a real number.</p>
+    </li>
+
+  </ul>
+
+  <ul class="work-list">
+
+    <li class="work-item">
+      <div class="work-item-top">
+        <div class="work-item-title">
+          <span class="tag">Analytics</span>
+          <h3>Marketing Analytics</h3>
+        </div>
+      </div>
+      <p>Campaigns built to make money, not just impressions.</p>
+    </li>
+
+    <li class="work-item">
+      <div class="work-item-top">
+        <div class="work-item-title">
+          <span class="tag">AI / Ops</span>
+          <h3>AI-Powered Marketing Automation</h3>
+        </div>
+      </div>
+      <p>Claude and ChatGPT built into research, content ops, and CRM workflows.</p>
+    </li>
+
+    <li class="work-item">
+      <div class="work-item-top">
+        <div class="work-item-title">
+          <span class="tag">Executive</span>
+          <h3>Executive Communication</h3>
+        </div>
+      </div>
+      <p>Strategy decks built to drive one decision, for VPs and Directors.</p>
+    </li>
+
+    <li class="work-item">
+      <div class="work-item-top">
+        <div class="work-item-title">
+          <span class="tag">Leadership</span>
+          <h3>Leadership &amp; Cross-Functional Management</h3>
+        </div>
+      </div>
+      <p>Aligning teams and managing the people who make the plan happen.</p>
+    </li>
+
+  </ul>
+</section>
+
+<section class="recs" id="recommendations">
+  <div class="work-head">
+    <h2>Recommendations</h2>
+    <p>What managers and clients have said, in their own words.</p>
+  </div>
+
+  <ul class="recs-list">
+
+    <li class="rec-card is-featured">
+      <div class="rec-person">
+        <img src="assets/recommendations/prasha-avatar.png" alt="">
+        <div>
+          <div class="rec-person-name">Prasha Dutra</div>
+          <div class="rec-person-title">Helps senior women engineers land $250K+ roles &middot; 1,000+ women coached &middot; $53M+ in offers</div>
+          <div class="rec-person-date">October 18, 2025 &middot; managed Kashish directly</div>
+        </div>
+      </div>
+      <blockquote>
+        <p>This is not a recommendation, it's the truth. It's why I say to Kash, behind her back and how I introduce her to anyone I know.</p>
+        <p>Over the past year, Kashish has been instrumental in transforming our marketing efforts and expanding our network throughout the Boston area. What she accomplished in just 12 months is remarkable, and the fact that she did it all as an unpaid intern makes it even more extraordinary.</p>
+        <p>Here's what Kashish delivered: she created marketing funnels that generated over $200,000 in sales across multiple campaigns. She orchestrated the launch of my in-person podcast from the ground up: curating 8 guests, managing all logistics, handling marketing strategy, and overseeing guest relations with exceptional professionalism. She came in 25% under budget while delivering everything on time and helping us forge genuine, lasting relationships with every attendee.</p>
+        <p>Beyond the metrics, Kashish's true value lies in her character. She's the most reliable person I've worked with, period. Her honesty, trustworthiness, and strategic brilliance set her apart. She doesn't just execute; she builds connections, solves problems before they arise, and elevates everything she touches.</p>
+        <p>I'll be direct: if I could sponsor her visa, she would be my Head of Marketing tomorrow. That's not hyperbole, that's how confident I am in her abilities.</p>
+        <p>If you're considering hiring Kashish, stop considering and make the offer. You won't regret it. She's not just talented; she's the kind of person who makes everyone around her better. Any organization would be incredibly fortunate to have her on their team.</p>
+      </blockquote>
+    </li>
+
+    <li class="rec-card">
+      <div class="rec-person">
+        <img src="assets/recommendations/margarita-avatar.png" alt="">
+        <div>
+          <div class="rec-person-name">Margarita Saakova</div>
+          <div class="rec-person-title">Global Head of Launch and Strategic Planning, Alexion, AstraZeneca Rare Disease</div>
+          <div class="rec-person-date">December 3, 2024 &middot; managed Kashish directly</div>
+        </div>
+      </div>
+      <blockquote>
+        <p>I had the pleasure of working with Kashish during her internship, where she made significant contributions to three key projects: Global Strategy Execution KPIs Harmonisation, the creation of an Internal Collaboration Platform Concept, and an Internal Communication Campaign. Throughout her time with us, Kashish consistently demonstrated exceptional analytical skills, creativity, and discipline.</p>
+        <p>In the KPI harmonisation project, Kashish analysed internal strategic materials across the portfolio and significantly contributed to developing KPIs linked to the patient treatment pathway. She presented the results of this project at an internal event, where her insights and clarity were highly praised and well-received by all attendees.</p>
+        <p>Kashish also spearheaded the creation of an Internal Collaboration Platform Concept, taking it from mission and branding to setting up the concept for the first event. Her innovative approach significantly enhanced team collaboration and engagement, laying the groundwork for improved communication and cooperation across the organization.</p>
+        <p>Her professionalism and dedication made her a valuable asset to our team, and I am confident she will excel in her future endeavors. I highly recommend Kashish to any organization looking for a talented and committed professional.</p>
+      </blockquote>
+    </li>
+
+    <li class="rec-card">
+      <div class="rec-person">
+        <img src="assets/recommendations/sam-avatar.png" alt="">
+        <div>
+          <div class="rec-person-name">Sam Mathew</div>
+          <div class="rec-person-title">Head, Forecasting &amp; Portfolio Analytics, Global Marketing &amp; Market Access</div>
+          <div class="rec-person-date">November 28, 2024 &middot; managed Kashish directly</div>
+        </div>
+      </div>
+      <blockquote>
+        <p>Kashish consistently brings high energy, professionalism, and a strong work ethic to everything she does. Over the past year, she played a key role in supporting our Gen AI project focused on Competitive Intelligence and Market Research. Her contributions included managing vendors, coordinating with stakeholders, and ensuring that the Proof of Concept (POC) launch stayed on track.</p>
+        <p>Additionally, Kashish helped facilitate a series of Design Thinking workshops, contributing to their smooth execution. She demonstrated excellent attention to detail by taking thorough notes during the Therapeutic Area Long-Term Planning review sessions.</p>
+      </blockquote>
+    </li>
+
+    <li class="rec-card">
+      <div class="rec-person">
+        <img src="assets/recommendations/pratham-avatar.png" alt="">
+        <div>
+          <div class="rec-person-name">Pratham Keshariya</div>
+          <div class="rec-person-title">Brand Manager, driving 360&deg; marketing for SBI Securities &middot; ex&ndash;FCB Ulka</div>
+          <div class="rec-person-date">September 20, 2022 &middot; managed Kashish directly</div>
+        </div>
+      </div>
+      <blockquote>
+        <p>I've worked with many marketers but Kashish has been very dedicated for the work! She consistently gave 100% of herself to our team, and was critical in ensuring the completion of our digital marketing projects by the deadline.</p>
+        <p>Kashish is always reliable and professional, and at stressful times she is a positive influence on all of us. Overall, it was a pleasure to work with and I have qualms recommending her to anybody looking for an excellent Digital Marketer!</p>
+      </blockquote>
+    </li>
+
+    <li class="rec-card">
+      <div class="rec-person">
+        <img src="assets/recommendations/alexis-avatar.png" alt="">
+        <div>
+          <div class="rec-person-name">Alexis Assad</div>
+          <div class="rec-person-title">Assistant Food Service Director at Cambridge Public Schools</div>
+          <div class="rec-person-date">December 18, 2025 &middot; worked with Kashish on the same team</div>
+        </div>
+      </div>
+      <blockquote>
+        <p>Working with Kash was nothing short of a pleasure. Kash joined my team in the midst of executing major projects and initiatives. She had the ability to manage a multitude of these new responsibilities quickly and was able to contribute seamlessly from the beginning. Kash is an expert marketer and brought a layer of excitement and engagement to the district as well as the internal team.</p>
+      </blockquote>
+    </li>
+
+  </ul>
+</section>
+
+<section class="awards" id="awards">
+  <div class="work-head">
+    <h2>Awards &amp; Recognition</h2>
+    <p>Recognition along the way, from graduate school to the pharma floor.</p>
+  </div>
+
+  <ul class="awards-list">
+
+    <li class="award-card">
+      <div class="award-head">
+        <h3>Laurel and Scroll 100 Award</h3>
+        <span class="award-meta">Issued by Northeastern University &middot; April 2025</span>
+      </div>
+      <p class="award-assoc">Lux. Veritas. Virtus. &middot; Associated with Northeastern University</p>
+      <p class="award-desc">Honors exceptional graduate and professional students across Northeastern's global university system.</p>
+      <ul class="award-quotes">
+        <li>"A prestigious recognition awarded to students across disciplines who exemplify Northeastern University's mission, values, and academic excellence."</li>
+        <li>President Joseph E. Aoun said Laurel and Scroll 100 honorees have a "Northeastern advantage," a community with graduates all over the world.</li>
+      </ul>
+      <div class="award-photos">
+        <img src="assets/awards/laurel-handshake.jpg" alt="Kashish Patel shaking hands with a Northeastern University leader at the Laurel and Scroll 100 event">
+        <img src="assets/awards/laurel-stage.jpg" alt="Kashish Patel on stage holding her Laurel and Scroll 100 certificate in front of the award screen">
+      </div>
+      <a class="award-link" href="https://www.linkedin.com/in/kashishpatel0/overlay/Honor/724612713/treasury/?profileId=ACoAACuqeqYBz5LcAdTHBiFHnlLy4Izhihvallw" target="_blank" rel="noopener">
+        View the honor on LinkedIn
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </li>
+
+    <li class="award-card">
+      <div class="award-head">
+        <h3>KPI Contribution Award</h3>
+        <span class="award-meta">Issued by Alexion Pharmaceuticals &middot; December 2024</span>
+      </div>
+      <p class="award-assoc">Associated with AstraZeneca</p>
+      <p class="award-desc">Redefined a cost-effective global KPI strategy for the patient treatment pathway.</p>
+    </li>
+
+    <li class="award-card">
+      <div class="award-head">
+        <h3>Mentor of Distinction Award</h3>
+        <span class="award-meta">Issued by Northeastern University &middot; December 2024</span>
+      </div>
+      <p class="award-assoc">Associated with Northeastern University</p>
+      <p class="award-desc">Consistently demonstrated a high level of dedication, passion, and engagement in supporting global community-building efforts and contributing positively to the experiences of international mentees.</p>
+      <div class="award-photos">
+        <img src="assets/awards/mentor-podium.jpg" alt="Kashish Patel speaking at a podium in front of a screen reading Mentor of Distinction, Winner: Kashish Patel">
+      </div>
+      <a class="award-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7272690233589084160/" target="_blank" rel="noopener">
+        Mentor of Distinction Award, Office of Global Services
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </li>
+
+    <li class="award-card">
+      <div class="award-head">
+        <h3>CPS Leaders and Scholars Award</h3>
+        <span class="award-meta">Issued by Northeastern University, College of Professional Studies &middot; November 2022</span>
+      </div>
+      <p class="award-assoc">Associated with Northeastern University</p>
+      <p class="award-desc">Awarded in recognition of outstanding academic achievement, reflecting the expectation of continuing academic success at Northeastern.</p>
+    </li>
+
+    <li class="award-card">
+      <div class="award-head">
+        <h3>Meet the marketing manager making Boston school lunches go viral</h3>
+        <span class="award-meta">Northeastern Global News &middot; November 2025</span>
+      </div>
+      <p class="award-assoc">In the news</p>
+      <p class="award-desc">A Northeastern Global News feature on Kashish becoming the first marketing manager for Boston Public Schools' Food &amp; Nutrition Services: building the department's first comprehensive marketing plan, launching the "BPS Eats" social account, and growing it with high-quality infographics and short-form video that reach 48,000+ meals served daily across 125 schools.</p>
+      <ul class="award-quotes">
+        <li>"I want to build something strong, making sure that if the team increases or someone comes in after me, they would have a strong baseline to build upon."</li>
+      </ul>
+      <a class="award-link" href="https://news.northeastern.edu/2025/11/25/marketing-for-boston-school-meals/" target="_blank" rel="noopener">
+        Read the full story
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </li>
+
+    <li class="award-card">
+      <div class="award-head">
+        <h3>Global, Growth, Resilience</h3>
+        <span class="award-meta">Northeastern University College of Professional Studies &middot; Student spotlight</span>
+      </div>
+      <p class="award-assoc">In the news</p>
+      <p class="award-desc">A CPS student spotlight profiling Kashish's path through Northeastern's MS in Project Management program: her co-op as a Project Manager at Alexion, AstraZeneca supporting Gen AI projects and cross-functional product launches; mentoring international students through the Office of Global Services; and her goal of becoming a CMO and eventually running her own advertising agency.</p>
+      <ul class="award-quotes">
+        <li>"Northeastern gave me more than a degree; it gave me clarity about who I am and what I want to build."</li>
+      </ul>
+      <a class="award-link" href="https://cps.northeastern.edu/story/kashish/" target="_blank" rel="noopener">
+        Read the full story
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </li>
+
+  </ul>
+</section>
+
+<section class="certs" id="education">
+  <div class="work-head">
+    <h2>Education</h2>
+    <p>Degrees and certifications behind the work, from digital marketing to project management.</p>
+  </div>
+
+  <ul class="certs-list">
+    <li class="cert-card">
+      <h3>Executive MBA, Marketing Management</h3>
+      <span class="cert-meta">New England College &middot; New Hampshire, MA &middot; Present</span>
+    </li>
+    <li class="cert-card">
+      <h3>Masters in Project Management</h3>
+      <span class="cert-meta">Northeastern University &middot; Boston, MA &middot; Dec 2024</span>
+    </li>
+    <li class="cert-card">
+      <h3>Advance Certification in Digital Marketing, Specialization in Marketing Analytics</h3>
+      <span class="cert-meta">MICA | The School of Ideas &middot; Mar 2022</span>
+    </li>
+    <li class="cert-card">
+      <h3>Master of Commerce, International Marketing</h3>
+      <span class="cert-meta">University of Mumbai &middot; Mumbai, India &middot; 2019&ndash;2022</span>
+    </li>
+    <li class="cert-card">
+      <h3>Project Management Course</h3>
+      <span class="cert-meta">Harvard Business Publishing &middot; Feb 2023</span>
+    </li>
+    <li class="cert-card">
+      <h3>Process Enhancements: Technical Planning &amp; Risk Management</h3>
+      <span class="cert-meta">Skillsoft &middot; Mar 2024</span>
+    </li>
+    <li class="cert-card">
+      <h3>Apple Search Ads Certification</h3>
+      <span class="cert-meta">Apple &middot; Sep 2021</span>
+    </li>
+    <li class="cert-card">
+      <h3>Marketing and Lunchroom Education</h3>
+      <span class="cert-meta">Chef Ann Foundation &middot; Aug 2025</span>
+    </li>
+    <li class="cert-card">
+      <h3>Growing Business With Facebook</h3>
+      <span class="cert-meta">upGrad &middot; Feb 2022</span>
+    </li>
+    <li class="cert-card">
+      <h3>Creator Course: Born On Instagram</h3>
+      <span class="cert-meta">Facebook &middot; Apr 2022</span>
+    </li>
+    <li class="cert-card">
+      <h3>Lululemon Omnichannel Marketing</h3>
+      <span class="cert-meta">Forage &middot; May 2023</span>
+    </li>
+    <li class="cert-card">
+      <h3>Certificate in Graphic Designing</h3>
+      <span class="cert-meta">Mark Infotech &middot; Feb 2020</span>
+    </li>
+  </ul>
+</section>

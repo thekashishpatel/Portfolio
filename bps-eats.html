@@ -1,0 +1,118 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BPS Eats</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case-study.css">
+<script>history.scrollRestoration="manual";window.scrollTo(0,0);addEventListener("pageshow",function(){window.scrollTo(0,0);});</script>
+
+<nav class="nav">
+  <div class="nav-left">
+    <span class="mark">Kashish Patel</span>
+    <span class="tagline">The Marketing Freak™</span>
+  </div>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="./#work">Work</a>
+    <a href="./#recommendations">Recommendations</a>
+    <a href="./#awards">Awards</a>
+    <a href="./#education">Education</a>
+    <a href="https://drive.google.com/file/d/1ZUnAs2K84tHvm_HBs560I-zbRzhI_A7S/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+    <a href="https://www.linkedin.com/in/kashishpatel0/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="is-cta" href="mailto:kashishpatel2210@gmail.com">Contact me</a>
+  </div>
+</nav>
+
+<script>
+  (function(){
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('.nav');
+    if(!btn || !nav) return;
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+
+<a class="back-link" href="./">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+  Back to home
+</a>
+
+<header class="page-head">
+  <span class="tag">Flagship</span>
+  <h1>BPS Eats</h1>
+  <p>Boston Public Schools' Food &amp; Nutrition Services hired its first-ever marketing manager. This is the department's first comprehensive marketing plan, and the account built to carry it.</p>
+</header>
+
+<section class="case-studies">
+
+  <article class="case-study">
+    <div class="case-head">
+      <div>
+        <span class="eyebrow">Boston Public Schools, Food &amp; Nutrition Services</span>
+        <h2>Building the department's first marketing function</h2>
+      </div>
+    </div>
+
+    <div class="case-grid">
+      <div class="case-block">
+        <h3>The role</h3>
+        <p>I'm the first marketing manager Boston Public Schools' Food &amp; Nutrition Services has ever had. There was no playbook to inherit, so the job started with building one: a comprehensive marketing plan for a department feeding one of the largest school districts in the country.</p>
+      </div>
+      <div class="case-block">
+        <h3>The challenge</h3>
+        <p>School food has an image problem before anyone tastes it. The department needed a public-facing identity that could change the conversation around what BPS actually serves, at the scale of 125 schools, without an existing account, content library, or process to build from.</p>
+      </div>
+      <div class="case-block">
+        <h3>The solution</h3>
+        <p>I launched BPS Eats, the department's own social account, and built the content engine behind it: high-quality infographics that make nutrition and sourcing information easy to scan, paired with short-form vertical video that shows the food and the people making it.</p>
+      </div>
+      <div class="case-block">
+        <h3>Built to last</h3>
+        <p>Every system, template, and workflow is documented on purpose. As I said to Northeastern Global News: I want to build something strong, so that if the team grows or someone comes in after me, they'd have a solid baseline to build on, not a blank page.</p>
+      </div>
+    </div>
+
+    <div class="case-result">
+      <h3>Reach</h3>
+      <p>48,000+ meals served daily across 125 schools, with 96% freshly prepared, communicated through an account and content system that didn't exist before this role.</p>
+    </div>
+
+    <div class="case-grid">
+      <div class="case-block">
+        <h3>Content strategy</h3>
+        <p>Infographics for the information that needs to be scanned and trusted (sourcing, nutrition, menu changes), and short-form vertical video for the moments that need to be felt: kitchens, staff, and students. Early videos posted to BPS Eats drew 4,000+ views each, without any paid promotion behind them.</p>
+      </div>
+      <div class="case-block">
+        <h3>Programming highlight</h3>
+        <p>Planned and promoted Global Food Choice Day, a district-wide moment built to spotlight the range and culture behind the menu, using the same infographic-plus-video content model built for the account's everyday posting.</p>
+      </div>
+    </div>
+
+    <div class="case-shots">
+      <figure>
+        <img src="assets/bps-eats/kash-bps-eats.jpg" alt="Kashish Patel handing out materials to students at a BPS Eats school event">
+        <figcaption>On the ground at a BPS Eats event, the same work behind the account and content system above.</figcaption>
+      </figure>
+    </div>
+
+    <a class="resource-link" href="https://news.northeastern.edu/2025/11/25/marketing-for-boston-school-meals/" target="_blank" rel="noopener">
+      Read the Northeastern Global News feature
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+  </article>
+
+</section>

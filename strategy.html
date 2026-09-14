@@ -1,0 +1,271 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case-study.css">
+<script>history.scrollRestoration="manual";window.scrollTo(0,0);addEventListener("pageshow",function(){window.scrollTo(0,0);});</script>
+
+<nav class="nav">
+  <div class="nav-left">
+    <span class="mark">Kashish Patel</span>
+    <span class="tagline">The Marketing Freak™</span>
+  </div>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="./#work">Work</a>
+    <a href="./#recommendations">Recommendations</a>
+    <a href="./#awards">Awards</a>
+    <a href="./#education">Education</a>
+    <a href="https://drive.google.com/file/d/1ZUnAs2K84tHvm_HBs560I-zbRzhI_A7S/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+    <a href="https://www.linkedin.com/in/kashishpatel0/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="is-cta" href="mailto:kashishpatel2210@gmail.com">Contact me</a>
+  </div>
+</nav>
+
+<script>
+  (function(){
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('.nav');
+    if(!btn || !nav) return;
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+
+<a class="back-link" href="./">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+  Back to home
+</a>
+
+<header class="page-head">
+  <span class="tag">Strategy</span>
+  <h1>Marketing Strategy</h1>
+  <p>7+ years building go-to-market strategy and launches: competitive intel, messaging, and customer research that turns into positioning that actually holds up. Two full digital marketing plans, built from goal down to weekly budget line.</p>
+</header>
+
+<div class="page-tools">
+  <h3>Tools</h3>
+  <ul class="tool-chips">
+    <li>Meta Ads Manager</li>
+    <li>Google Ads</li>
+    <li>Google Analytics</li>
+    <li>Zoho CRM</li>
+    <li>Mailchimp</li>
+    <li>Google Sheets / Excel</li>
+    <li>PowerPoint / Canva</li>
+  </ul>
+</div>
+
+<section class="case-studies">
+
+  <article class="case-study">
+    <div class="case-head">
+      <img class="logo is-wide" src="assets/strategy/sb-logo.png" alt="Shree Balaji Group logo">
+      <div>
+        <span class="eyebrow">Real estate developer</span>
+        <h2>Shree Balaji Group</h2>
+      </div>
+    </div>
+
+    <div class="case-grid">
+      <div class="case-block">
+        <h3>About the project</h3>
+        <p>Shree Balaji Agora City Centre is a "city within a city" development in Vadodara: 72 2BHK, 168 3BHK, 99 4BHK, 21 penthouses, and 190 offices across six towers, with a 2.10-lakh sq ft podium club and 40+ amenities.</p>
+      </div>
+      <div class="case-block">
+        <h3>Goal</h3>
+        <p>Build strong brand awareness for a newly launched project and generate 300+ qualified leads.</p>
+      </div>
+      <div class="case-block">
+        <h3>Target audience</h3>
+        <p>Business owners, directors, and CEOs aged 27&ndash;65 across Vadodara and neighboring cities, profiled as investment-minded, luxury-lifestyle buyers with an interest in high-value property.</p>
+      </div>
+      <div class="case-block">
+        <h3>Strategy</h3>
+        <p>A four-stage funnel: Meta brand-awareness ads for reach, video ads to build interest, lead-gen ads with retargeting to drive decisions, and a site-visit push to close, phased over three campaign cycles and piped straight into the sales team's CRM.</p>
+      </div>
+    </div>
+
+    <div class="campaign-table-wrap">
+      <table class="campaign-table">
+        <thead>
+          <tr>
+            <th>Campaign objective</th>
+            <th>Platform</th>
+            <th>Ad type</th>
+            <th>KPI</th>
+            <th>Est. results</th>
+            <th>Budget</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="campaign-name">Boosting all 12 posts</td>
+            <td>Meta</td>
+            <td>Boosted post</td>
+            <td>Reach</td>
+            <td class="num">35,000&ndash;250,000</td>
+            <td class="num">₹24,000</td>
+          </tr>
+          <tr>
+            <td class="campaign-name">Lead generation</td>
+            <td>Meta</td>
+            <td>Lead gen ad</td>
+            <td>No. of leads, reach</td>
+            <td class="num">240&ndash;300</td>
+            <td class="num">₹1,50,000</td>
+          </tr>
+          <tr>
+            <td class="campaign-name">Traffic ad</td>
+            <td>Google</td>
+            <td>YouTube ad</td>
+            <td>Link clicks, views</td>
+            <td class="num">1.3K&ndash;5.9K</td>
+            <td class="num">₹10,000</td>
+          </tr>
+          <tr>
+            <td class="campaign-name">Lead generation ad</td>
+            <td>Google</td>
+            <td>Search ad</td>
+            <td>No. of leads, impressions</td>
+            <td class="num">40&ndash;60</td>
+            <td class="num">₹75,000</td>
+          </tr>
+          <tr>
+            <td class="campaign-name"><strong>Total</strong></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="num"><strong>₹2,59,000</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <a class="resource-link" href="assets/strategy/shree-balaji-digital-plan.pdf" target="_blank" rel="noopener">
+      View the full digital marketing plan (PDF)
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+  </article>
+
+  <article class="case-study">
+    <div class="case-head">
+      <img class="logo is-wide" src="assets/strategy/sz-logo.png" alt="Step Zero Academy logo">
+      <div>
+        <span class="eyebrow">Design education platform</span>
+        <h2>Step Zero Academy</h2>
+      </div>
+    </div>
+
+    <div class="case-grid">
+      <div class="case-block">
+        <h3>About the brand</h3>
+        <p>A multilingual online platform simplifying design education through community-led, cohort-based courses that help graphic designers become problem-solving brand designers who can command high-ticket clients.</p>
+      </div>
+      <div class="case-block">
+        <h3>Goal</h3>
+        <p>Generate ₹5,00,000 in revenue within 30&ndash;45 days by moving traffic up a value ladder toward the ₹15,000 mentorship program.</p>
+      </div>
+      <div class="case-block">
+        <h3>Target audience</h3>
+        <p>Graphic designers, freelancers, and creative-agency owners aged 18&ndash;30 studying or working in design, concentrated in Mumbai, Pune, Bangalore, Hyderabad, and other South Indian markets.</p>
+      </div>
+      <div class="case-block">
+        <h3>Strategy</h3>
+        <p>Three parallel funnels, a free workshop, a ₹499 paid workshop, and a ₹99 recorded webinar, each engineered to upsell into the ₹15,000 mentorship program, backed by brand-driven, product-driven, urgency, and coach-credibility content across the ad set.</p>
+      </div>
+    </div>
+
+    <div class="case-result">
+      <h3>Traction so far</h3>
+      <p>Two months in: ~₹70,000 invested across 2 live workshops generated ₹53,483 in revenue, 3 upsells into the ₹15,000 course plus 17 enrollments in the ₹499 workshop, with 700 customer records banked for custom and lookalike audiences.</p>
+    </div>
+
+    <div class="campaign-table-wrap">
+      <table class="campaign-table">
+        <caption>Integrated media plan, June 2022</caption>
+        <thead>
+          <tr>
+            <th>Campaign objective</th>
+            <th>Platform</th>
+            <th>Ad type</th>
+            <th>Duration</th>
+            <th>KPI</th>
+            <th>Budget</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="campaign-name">Brand awareness</td>
+            <td>Meta</td>
+            <td>Sponsored ad</td>
+            <td>1 month</td>
+            <td>Reach, impressions</td>
+            <td class="num">₹3,000</td>
+          </tr>
+          <tr>
+            <td class="campaign-name">Product reach / brand awareness</td>
+            <td>Google</td>
+            <td>Display ad, YouTube ad</td>
+            <td>1 month</td>
+            <td>Reach, impressions</td>
+            <td class="num">₹6,000</td>
+          </tr>
+          <tr>
+            <td class="campaign-name">Drive traffic</td>
+            <td>Meta</td>
+            <td>Sponsored ad, YouTube ad</td>
+            <td>1 month</td>
+            <td>Link clicks</td>
+            <td class="num">₹3,000</td>
+          </tr>
+          <tr>
+            <td class="campaign-name">Conversion ads</td>
+            <td>Meta</td>
+            <td>Sponsored ad</td>
+            <td>2 weeks</td>
+            <td>Purchases</td>
+            <td class="num">₹7,000</td>
+          </tr>
+          <tr>
+            <td class="campaign-name">Conversion ads</td>
+            <td>Google</td>
+            <td>Display ad, YouTube ad</td>
+            <td>2 weeks</td>
+            <td>Conversion</td>
+            <td class="num">₹5,000</td>
+          </tr>
+          <tr>
+            <td class="campaign-name"><strong>Total</strong></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="num"><strong>₹24,000</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <a class="resource-link" href="assets/strategy/step-zero-academy-media-plan.pdf" target="_blank" rel="noopener">
+      View the full digital marketing plan (PDF)
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+  </article>
+
+</section>

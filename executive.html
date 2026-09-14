@@ -1,0 +1,101 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Communication</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case-study.css">
+<script>history.scrollRestoration="manual";window.scrollTo(0,0);addEventListener("pageshow",function(){window.scrollTo(0,0);});</script>
+
+<nav class="nav">
+  <div class="nav-left">
+    <span class="mark">Kashish Patel</span>
+    <span class="tagline">The Marketing Freak™</span>
+  </div>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+  <div class="nav-links">
+    <a href="./#work">Work</a>
+    <a href="./#recommendations">Recommendations</a>
+    <a href="./#awards">Awards</a>
+    <a href="./#education">Education</a>
+    <a href="https://drive.google.com/file/d/1ZUnAs2K84tHvm_HBs560I-zbRzhI_A7S/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+    <a href="https://www.linkedin.com/in/kashishpatel0/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="is-cta" href="mailto:kashishpatel2210@gmail.com">Contact me</a>
+  </div>
+</nav>
+
+<script>
+  (function(){
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('.nav');
+    if(!btn || !nav) return;
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+
+<a class="back-link" href="./">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+  Back to home
+</a>
+
+<header class="page-head">
+  <span class="tag">Executive</span>
+  <h1>Executive Communication</h1>
+  <p>Turning data into a decision. I build the strategy decks and present the recommendation straight to VPs and Directors.</p>
+</header>
+
+<section class="overview">
+  <div class="detail">
+    <p>Every strategy on this site ends the same way: in a room, with a recommendation, defending it. The Shree Balaji and Step Zero Academy plans in Marketing Strategy were both built to be presented and signed off on, not just filed.</p>
+    <ul>
+      <li>Distilling research and results into a deck built to drive one decision, not summarize everything</li>
+      <li>Presenting directly to VPs and Directors and defending the recommendation in the room</li>
+      <li>Writing the narrative that connects the data to the “so here's what we do next”</li>
+    </ul>
+    <h3 class="tools-heading">Tools</h3>
+    <ul class="tool-chips">
+      <li>PowerPoint</li>
+      <li>Google Slides</li>
+      <li>Canva</li>
+      <li>Excel</li>
+    </ul>
+  </div>
+</section>
+
+<section class="case-studies">
+  <article class="case-study">
+    <div class="case-head">
+      <div>
+        <span class="eyebrow">Alexion, AstraZeneca &middot; Rare Disease</span>
+        <h2>Presenting to leadership</h2>
+      </div>
+    </div>
+    <div class="case-grid">
+      <div class="case-block">
+        <h3>KPI harmonisation</h3>
+        <p>Analyzed internal strategic materials across the portfolio for the Global Strategy Execution KPIs Harmonisation project, then presented the results at an internal event, where the insights and clarity were well received across the room.</p>
+      </div>
+      <div class="case-block">
+        <h3>Internal collaboration platform</h3>
+        <p>Took an Internal Collaboration Platform Concept from mission and branding through to the setup of its first event, presenting the concept to stakeholders along the way.</p>
+      </div>
+    </div>
+    <a class="resource-link" href="strategy.html">
+      See the strategy decks this kind of presentation is built on
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+  </article>
+</section>
